@@ -1,0 +1,80 @@
+plugins {
+    id 'java'
+    id "com.google.protobuf" version "0.9.4"
+}
+
+group = 'com.midel'
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+def grpcVersion = '1.62.2'
+def springBootVersion = '3.2.4'
+
+dependencies {
+    runtimeOnly "io.grpc:grpc-netty-shaded:${grpcVersion}"
+    implementation "io.grpc:grpc-protobuf:${grpcVersion}"
+    implementation "io.grpc:grpc-stub:${grpcVersion}"
+    compileOnly "org.apache.tomcat:annotations-api:6.0.53"
+
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}"
+    implementation "org.springframework.boot:spring-boot-starter:${springBootVersion}"
+    implementation 'net.devh:grpc-server-spring-boot-autoconfigure:2.15.0.RELEASE'
+
+
+    implementation 'org.projectlombok:lombok:1.18.32'
+    compileOnly 'org.projectlombok:lombok:1.18.32'
+    annotationProcessor 'org.projectlombok:lombok:1.18.32'
+
+    implementation 'org.mapstruct:mapstruct:1.5.5.Final'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
+
+    testImplementation "io.grpc:grpc-testing:${grpcVersion}"
+    testImplementation "io.grpc:grpc-inprocess:${grpcVersion}"
+    testImplementation "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+
+    implementation 'org.postgresql:postgresql:42.7.3'
+    runtimeOnly 'org.postgresql:postgresql:42.7.3'
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:3.25.1"
+    }
+    plugins {
+        grpc { artifact = "io.grpc:protoc-gen-grpc-java:${grpcVersion}" }
+    }
+    generateProtoTasks {
+        all()*.plugins {
+            grpc {}
+        }
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs 'build/generated/source/proto/main/grpc'
+            srcDirs 'build/generated/source/proto/main/java'
+        }
+        proto {
+            srcDir 'src/main/resources/proto'
+            include '**/*.proto'
+        }
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+compileJava {
+    options.compilerArgs.addAll(['-source', '17', '-target', '17'])
+}
