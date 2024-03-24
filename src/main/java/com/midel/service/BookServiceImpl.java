@@ -21,8 +21,9 @@ public class BookServiceImpl implements BookService {
     public UUID addBook(BookDTO bookDto) {
 
         Book book = bookMapper.toBook(bookDto);
-        book.setId(null);
-
+        if (bookDto.id() != null && bookDto.id().isBlank()) {
+            book.setId(null);
+        }
         return bookRepository.save(book).getId();
     }
 

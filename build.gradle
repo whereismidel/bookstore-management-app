@@ -36,12 +36,17 @@ dependencies {
     implementation 'org.mapstruct:mapstruct:1.5.5.Final'
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
 
-    testImplementation "io.grpc:grpc-testing:${grpcVersion}"
-    testImplementation "io.grpc:grpc-inprocess:${grpcVersion}"
-    testImplementation "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
-
     implementation 'org.postgresql:postgresql:42.7.3'
     runtimeOnly 'org.postgresql:postgresql:42.7.3'
+
+    testImplementation "io.grpc:grpc-testing:${grpcVersion}"
+    testImplementation "io.grpc:grpc-inprocess:${grpcVersion}"
+
+    testImplementation "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+    testImplementation "org.testcontainers:postgresql:1.19.6"
+    testImplementation "org.testcontainers:junit-jupiter:1.19.6"
+
+    testImplementation 'org.mockito:mockito-junit-jupiter:5.10.0'
 }
 
 protobuf {

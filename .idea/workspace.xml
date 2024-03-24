@@ -4,31 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32adc085-1088-4d02-9809-f22b6135c221" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/protoeditor.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/midel/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/midel/dto/BookDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/midel/dto/BookMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/midel/entity/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/midel/grpc/BookGrpcServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/midel/repository/BookRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/midel/service/BookService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/midel/service/BookServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/proto/BookService.proto" afterDir="false" />
+    <list default="true" id="32adc085-1088-4d02-9809-f22b6135c221" name="Changes" comment="Add integration tests for Book gRPC service and unit tests for Book service.&#10;&#10;Implemented a PostgreSQL test container to provide a database for running the tests.&#10;Added integration tests for the gRPC service `BookGrpcServiceIT` to test the functionality of CRUD operations using gRPC calls. &#10;Added unit tests for the `BookServiceImpl` class to test the CRUD service layer logic.">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/midel/BookGrpcServiceIT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/midel/BookServiceUnitTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/midel/PostgresTestContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/midel/entity/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/midel/entity/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/midel/grpc/BookGrpcServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/midel/grpc/BookGrpcServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/midel/service/BookServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/midel/service/BookServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,20 +64,26 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
+        <option value="JUnit5 Test Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2e40dJlRK9utlLUQDaIMHlP4fmb" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -101,7 +92,18 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.BookGrpcServiceImplTest.addAndGetBook.executor": "Run",
+    "Gradle.BookGrpcServiceIntegrationTest.addAndGetBook.executor": "Run",
+    "Gradle.BookGrpcServiceIntegrationTest.deleteBook.executor": "Run",
+    "Gradle.BookGrpcServiceIntegrationTest.executor": "Run",
+    "Gradle.BookGrpcServiceIntegrationTest.testAddBook.executor": "Run",
+    "Gradle.BookGrpcServiceIntegrationTest.testGetAllBooks.executor": "Run",
+    "Gradle.BookGrpcServiceIntegrationTest.updateBook.executor": "Run",
+    "Gradle.BookServiceTest.executor": "Run",
+    "Gradle.BookServiceTest.testAddBook.executor": "Run",
+    "Gradle.BookServiceTest.testGetBookById.executor": "Run",
     "Gradle.Build bookstore-management-app.executor": "Run",
+    "Gradle.Tests in 'com.midel'.executor": "Run",
     "Gradle.bookstore-management-app [:Main.main()].executor": "Run",
     "Gradle.bookstore-management-app [assemble].executor": "Run",
     "Gradle.bookstore-management-app [buildDependents].executor": "Run",
@@ -117,6 +119,7 @@
     "HTTP Request.generated-requests | #3.executor": "Run",
     "HTTP Request.generated-requests | #4.executor": "Run",
     "HTTP Request.generated-requests | #5.executor": "Run",
+    "HTTP Request.generated-requests | #6.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -125,7 +128,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.Main.executor": "Run",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/Projects/Intellij Idea/bookstore-management-app/src/main/resources",
     "node.js.detected.package.eslint": "true",
@@ -136,7 +142,7 @@
     "project.structure.last.edited": "Facets",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "google.protobuf.language",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.importing",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -158,8 +164,86 @@
       <recent name="E:\Projects\Intellij Idea\bookstore-management-app\src\main\resources" />
       <recent name="E:\Projects\Intellij Idea\bookstore-management-app\src\main\java\com\midel\grpc" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.midel.grpc" />
+    </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.Main">
+  <component name="RunManager" selected="Gradle.Tests in 'com.midel'">
+    <configuration name="BookGrpcServiceIntegrationTest.addAndGetBook" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.midel.BookGrpcServiceIntegrationTest.addAndGetBook&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="BookServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.midel.BookServiceTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Tests in 'com.midel'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.midel.*&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="bookstore-management-app [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -182,16 +266,26 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="2" requestIdentifier="#2" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="generated-requests | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="3" requestIdentifier="#3" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="generated-requests | #4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="4" requestIdentifier="#4" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="generated-requests | #5" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="5" requestIdentifier="#5" runType="Run single request">
+    <configuration name="bookstore-management-app [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
@@ -203,11 +297,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.generated-requests | #5" />
-        <item itemvalue="HTTP Request.generated-requests | #2" />
-        <item itemvalue="HTTP Request.generated-requests | #4" />
-        <item itemvalue="HTTP Request.generated-requests | #3" />
+        <item itemvalue="Gradle.Tests in 'com.midel'" />
         <item itemvalue="Gradle.bookstore-management-app [build]" />
+        <item itemvalue="Gradle.bookstore-management-app [clean]" />
+        <item itemvalue="Gradle.BookGrpcServiceIntegrationTest.addAndGetBook" />
+        <item itemvalue="Gradle.BookServiceTest" />
       </list>
     </recent_temporary>
   </component>
@@ -227,8 +321,19 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1711148631097</updated>
-      <workItem from="1711148632150" duration="23041000" />
+      <workItem from="1711148632150" duration="38782000" />
+      <workItem from="1711239410143" duration="879000" />
+      <workItem from="1711240537571" duration="2216000" />
     </task>
+    <task id="LOCAL-00001" summary="Implement Java gRPC service for Book management&#10;&#10;This commit introduces a comprehensive Java gRPC service for managing books within a bookstore application. It encompasses DTOs, entity classes, repository interfaces, service layer implementations, and gRPC service endpoints.&#10;&#10;Key features include:&#10;&#10;- Addition of books via gRPC calls&#10;- Retrieval of books by ID&#10;- Retrieval of all books&#10;- Update of existing books&#10;- Deletion of books&#10;&#10;The service utilizes MapStruct for seamless mapping between DTOs and entity objects, enhancing code readability and maintainability. Spring Data JPA integration facilitates smooth interaction with the PostgreSQL database backend, ensuring efficient data management.&#10;&#10;Furthermore, the protobuf definitions define service methods and message types for seamless communication over gRPC.&#10;&#10;This commit also includes database configuration properties for PostgreSQL and gRPC server settings.">
+      <option name="closed" value="true" />
+      <created>1711223830280</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1711223830280</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,8 +350,23 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Implement Java gRPC service for Book management&#10;&#10;This commit introduces a comprehensive Java gRPC service for managing books within a bookstore application. It encompasses DTOs, entity classes, repository interfaces, service layer implementations, and gRPC service endpoints.&#10;&#10;Key features include:&#10;&#10;- Addition of books via gRPC calls&#10;- Retrieval of books by ID&#10;- Retrieval of all books&#10;- Update of existing books&#10;- Deletion of books&#10;&#10;The service utilizes MapStruct for seamless mapping between DTOs and entity objects, enhancing code readability and maintainability. Spring Data JPA integration facilitates smooth interaction with the PostgreSQL database backend, ensuring efficient data management.&#10;&#10;Furthermore, the protobuf definitions define service methods and message types for seamless communication over gRPC.&#10;&#10;This commit also includes database configuration properties for PostgreSQL and gRPC server settings." />
+    <MESSAGE value="Add integration tests for Book gRPC service and unit tests for Book service.&#10;&#10;Implemented a PostgreSQL test container to provide a database for running the tests.&#10;Added integration tests for the gRPC service `BookGrpcServiceIT` to test the functionality of CRUD operations using gRPC calls. &#10;Added unit tests for the `BookServiceImpl` class to test the CRUD service layer logic." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add integration tests for Book gRPC service and unit tests for Book service.&#10;&#10;Implemented a PostgreSQL test container to provide a database for running the tests.&#10;Added integration tests for the gRPC service `BookGrpcServiceIT` to test the functionality of CRUD operations using gRPC calls. &#10;Added unit tests for the `BookServiceImpl` class to test the CRUD service layer logic." />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="org.mockito.internal.handler.NullResultGuardian" memberName="delegate" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/bookstore_management_app$BookServiceTest_testAddBook.ic" NAME="BookServiceTest.testAddBook Coverage Results" MODIFIED="1711233027361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

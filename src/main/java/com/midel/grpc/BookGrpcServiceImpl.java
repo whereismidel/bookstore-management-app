@@ -129,7 +129,7 @@ public class BookGrpcServiceImpl extends BookServiceImplBase {
             return;
         }
 
-        if (bookService.deleteBook(id)){
+        if (!bookService.deleteBook(id)){
             responseObserver.onError(
                     NOT_FOUND.withDescription("Book with id = " + id + " was not found.")
                             .asRuntimeException()
