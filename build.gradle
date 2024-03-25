@@ -1,18 +1,28 @@
 plugins {
     id 'java'
     id "com.google.protobuf" version "0.9.4"
+    id 'application'
 }
+
 
 group = 'com.midel'
 version = '1.0'
+mainClassName = 'com.midel.Main'
 
 repositories {
+    mavenLocal()
     mavenCentral()
 }
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.midel.Main'
+    }
 }
 
 def grpcVersion = '1.62.2'

@@ -1,6 +1,5 @@
-package com.midel;
+package com.midel.grpc;
 
-import com.midel.grpc.BookServiceGrpc;
 import com.midel.grpc.BookServiceOuterClass.*;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
@@ -15,7 +14,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
-@SpringBootTest
+@SpringBootTest(classes = {com.midel.Main.class})
 public class BookGrpcServiceIT implements PostgresTestContainer {
 
     private static BookServiceGrpc.BookServiceBlockingStub blockingStub;

@@ -1,4 +1,4 @@
-package com.midel;
+package com.midel.grpc;
 
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
