@@ -12,7 +12,7 @@ Make sure you have the following installed:
 
 1. Clone this repository to your local machine:
 ```bash
-git clone https://github.com/whereismidel/bookstore-management-service.git
+git clone https://github.com/whereismidel/bookstore-management-app.git
 ```
 2. Navigate to the project directory:
 ```bash
@@ -51,6 +51,44 @@ The gRPC service will be available at `localhost:9090`.
 - `UpdateBook`: Updates an existing book.
 - `DeleteBook`: Deletes a book by its ID.
 
+## Testing
+
+### Using Postman
+
+1. Open Postman and create a new request.
+2. Set the request type to `POST`.
+3. Enter the ngrok URL (or localhost if testing locally) followed by the gRPC service endpoint, e.g., `0.tcp.eu.ngrok.io:12345`.
+4. In the request body, specify the protobuf message as JSON. For example:
+
+`AddBook`
+```json
+{
+  "book": {
+    "title": "Sample Book",
+    "author": "John Doe",
+    "isbn": "1234567890",
+    "quantity": 10
+  }
+}
+```
+`GetBookById` `DeleteBook`
+```json
+{
+  "id": "b357f85e-48d4-4eb4-9e7f-18cea7df89a6"
+}
+```
+`UpdateBook`
+```json
+{
+  "id": "b357f85e-48d4-4eb4-9e7f-18cea7df89a6",
+  "book": {
+    "title": "Sample Book",
+    "author": "John Doe",
+    "isbn": "1234567890",
+    "quantity": 10
+  }
+}
+```
 ## Technologies Used
 
 - Java
