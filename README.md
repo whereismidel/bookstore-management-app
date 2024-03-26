@@ -12,11 +12,11 @@ Make sure you have the following installed:
 
 1. Clone this repository to your local machine:
 ```bash
-git clone https://github.com/whereismidel/bookstore-management-app.git
+git clone https://github.com/whereismidel/bookstore-management-service.git
 ```
 2. Navigate to the project directory:
 ```bash
-cd book-service
+cd bookstore-management-service
 ```
 
 3. Update the database configurations in `src/main/resources/application.properties` according to your PostgreSQL setup:
@@ -56,8 +56,8 @@ The gRPC service will be available at `localhost:9090`.
 ### Using Postman
 
 1. Open Postman and create a new request.
-2. Set the request type to `POST`.
-3. Enter the ngrok URL (or localhost if testing locally) followed by the gRPC service endpoint, e.g., `0.tcp.eu.ngrok.io:12345`.
+2. Set the request type to `gRPC`.
+3. Enter the ngrok URL (or localhost if testing locally) followed by the gRPC service endpoint, e.g., `grpc://0.tcp.eu.ngrok.io:12345`.
 4. In the request body, specify the protobuf message as JSON. For example:
 
 `AddBook`
