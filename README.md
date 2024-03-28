@@ -33,7 +33,7 @@ gradlew clean build
 
 ## Run
 
-1. Once the project is built successfully, you can run it using Maven:
+1. Once the project is built successfully, you can run it using Gradle:
 ```bash
 gradlew run
 ```
